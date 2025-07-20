@@ -1,0 +1,143 @@
+/* Apply background to the entire page */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height */
+  width: 100%; /* Ensure full width */
+  background: linear-gradient(135deg, #3498db, #2980b9); /* Gradient blue background */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* App container centered with full height */
+.app {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  animation: fadeIn 1s ease-in; /* Fade-in animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h1 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(145deg, #ffffff, #f5f6fa); /* Soft white gradient */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filters:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.filters input,
+.filters select,
+.filters button {
+  padding: 12px;
+  border: 2px solid #1abc9c; /* Teal border */
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #2c3e50;
+  transition: all 0.3s ease; /* Smooth transitions for all properties */
+  outline: none;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #16a085; /* Darker teal on focus */
+  box-shadow: 0 0 8px rgba(26, 188, 156, 0.5); /* Glow effect */
+  background-color: #f9fbfd;
+}
+
+.filters button {
+  background: linear-gradient(90deg, #1abc9c, #16a085); /* Gradient button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.filters button:hover {
+  background: linear-gradient(90deg, #16a085, #138d75); /* Darker gradient on hover */
+  transform: scale(1.05); /* Slight scale up */
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.product-card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff, #f9fbfd); /* Soft gradient */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  text-align: left;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.02); /* Lift and scale effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #f9fbfd, #ffffff); /* Reverse gradient on hover */
+}
+
+.product-card h3 {
+  margin: 0 0 10px;
+  color: #e74c3c;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover h3 {
+  color: #c0392b; /* Darker red on hover */
+}
+
+.product-card p {
+  margin: 5px 0;
+  color: #34495e;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover p {
+  color: #2c3e50; /* Darker gray on hover */
+}
